@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 const AddProduct = () => {
     const [imageUrl, setImageUrl] = useState(null);
+    let displayLoadImage = false;
     const handleImage = (event) => {
         const imageData = new FormData();
         imageData.set('key', '97e094938ac70815786a7149e170c33d')
@@ -10,6 +11,7 @@ const AddProduct = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
           .then(function (response) {
             setImageUrl(response.data.data.display_url);
+            displayLoadImage = true;
           })
           .catch(function (error) {
             console.log(error);
@@ -26,15 +28,18 @@ const AddProduct = () => {
             price: `${price}`,
             photo: `${photo}`
         }
+        console.log(productData)
         const url = 'http://localhost:5000/products';
+        console.log(url)
         fetch(url,{
             method:'POST',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(productData)
         })
-        .then(res => res.json())
+        .then(res => console.log('data come'))
         .then(result => {
-            console.log(result)
+            console.log('data create successfully')
+            console.log(productData)
         })
         event.preventDefault();
     }
@@ -50,6 +55,7 @@ const AddProduct = () => {
                     <input className="form-control" type="text" placeholder="product price" id="price" />
                     <p>Add product Photo</p>
                     <input type="file" name="" onChange={handleImage} id="photo"/>
+                    {displayLoadImage && <p>Image Selected</p>}
                 </div>
                 <input type="submit" value="Save" className="btn btn-success"/>
             </form>
