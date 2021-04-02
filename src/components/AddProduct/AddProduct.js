@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import AdminSideBar from '../AdminSideBar/AdminSideBar';
 
 const AddProduct = () => {
     const [imageUrl, setImageUrl] = useState(null);
@@ -29,7 +30,7 @@ const AddProduct = () => {
             photo: `${photo}`
         }
         console.log(productData)
-        const url = 'http://localhost:5000/products';
+        const url = 'https://blooming-beach-54836.herokuapp.com/products';
         console.log(url)
         fetch(url,{
             method:'POST',
@@ -44,7 +45,11 @@ const AddProduct = () => {
         event.preventDefault();
     }
     return (
-        <div>
+        <div className="row overflow-hidden m-0">
+            <div className="col-md-2 pl-0">
+                <AdminSideBar />
+            </div>
+            <div className="col-md-10">
             <form onSubmit={handleSubmit}>
                 <div className="bg-white p-4 m-4 w-50 shadow rounded">
                     <p>Product Name</p>
@@ -59,6 +64,7 @@ const AddProduct = () => {
                 </div>
                 <input type="submit" value="Save" className="btn btn-success"/>
             </form>
+            </div>
         </div>
     );
 };

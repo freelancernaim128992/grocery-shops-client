@@ -16,7 +16,7 @@ const Header = () => {
                 <Nav className="w-100 d-flex justify-content-end">
                     <Nav.Link className="text-dark mr-4" href="/home">Home</Nav.Link>
                     <Nav.Link className="text-dark mr-4" href="/orders">Orders</Nav.Link>
-                    <Nav.Link className="text-dark mr-4" href="/admin">Admin</Nav.Link>
+                    <Nav.Link className="text-dark mr-4" href="/admin/manageProduct">Admin</Nav.Link>
                     <Nav.Link className="text-dark mr-4" href="/deals">Deals</Nav.Link>
                     {userInfo.isSigned ? <img src={userInfo.photoURL} style={profileImageStyle} alt=""/> : 
                     <Nav.Link className="text-white bg-success rounded" href="/login">LogIn</Nav.Link>

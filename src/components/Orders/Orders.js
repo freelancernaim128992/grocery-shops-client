@@ -7,7 +7,7 @@ const Orders = () => {
     const [orderedProduct, setOrderedProduct] = useState([]);
     const [userInfo,setUserInfo] = useContext(UserContext);
     useEffect(() => {
-        const url = 'http://localhost:5000/orderList?email='+userInfo.email;
+        const url = 'https://blooming-beach-54836.herokuapp.com/orderList?email='+userInfo.email;
         fetch(url)
         .then(res => res.json())
         .then(data => setOrderedProduct(data))

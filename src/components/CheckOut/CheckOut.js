@@ -11,7 +11,7 @@ const CheckOut = () => {
     const [userInfo,setUserInfo] = useContext(UserContext);
     const [checkOutProduct, setCheckOutProduct] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://blooming-beach-54836.herokuapp.com/product/${id}`;
         fetch(url)
         .then(res => res. json())
         .then(data => setCheckOutProduct(data))
@@ -23,7 +23,7 @@ const CheckOut = () => {
         const orderData = {...checkOutProduct}
         orderData.email = email;
         orderData.date = date;
-        const url = 'http://localhost:5000/orders'
+        const url = 'https://blooming-beach-54836.herokuapp.com/orders'
         fetch(url, {
             method: 'POST',
             headers: {'content-type': 'application/json'},

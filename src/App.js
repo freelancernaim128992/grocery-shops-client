@@ -21,8 +21,6 @@ export const UserContext = createContext();
 function App() {
   const [userInfo, setUserInfo] = useState({});
   return (
-    <>
-    <h1>email: {userInfo.email}</h1>
     <UserContext.Provider value={[userInfo, setUserInfo]}>
       <Router>
         <Switch>
@@ -38,13 +36,10 @@ function App() {
           <PrivateRoute path="/orders">
             <Orders />
           </PrivateRoute>
-          <PrivateRoute path="/admin">
-            <AdminContainer />
-          </PrivateRoute>
-          <PrivateRoute path="/manageProduct">
+          <PrivateRoute path="/admin/manageProduct">
             <ManageProduct />
           </PrivateRoute>
-          <PrivateRoute path="/addProduct">
+          <PrivateRoute path="/admin/addProduct">
             <AddProduct />
           </PrivateRoute>
           <Route path="/login">
@@ -56,7 +51,6 @@ function App() {
         </Switch>
       </Router>
     </UserContext.Provider>
-    </>
   );
 }
 

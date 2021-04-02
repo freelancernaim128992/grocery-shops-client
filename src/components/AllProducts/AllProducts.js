@@ -4,7 +4,7 @@ import Product from '../Product/Product';
 const AllProducts = () => {
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/product';
+        const url = 'https://blooming-beach-54836.herokuapp.com/product';
         fetch(url)
         .then(res => res.json())
         .then(data => setProduct(data))

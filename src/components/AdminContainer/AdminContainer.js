@@ -1,6 +1,6 @@
 import React from 'react';
-import AdminDashboard from '../AdminDashboard/AdminDashboard';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
+import ManageProduct from '../ManageProduct/ManageProduct';
 
 const AdminContainer = () => {
     return (
@@ -9,7 +9,7 @@ const AdminContainer = () => {
                 <AdminSideBar />
             </div>
             <div className="col-md-10">
-                <AdminDashboard />
+                <ManageProduct />
             </div>
         </div>
     );
