@@ -37,12 +37,19 @@ const LogIn = () => {
             // ...
         });
     }
+    const buttonStyle = {
+        width: '250px',
+        height: '40px',
+        backgroundColor: 'white',
+        border: '1px solid green',
+        borderRadius: '50px'
+    }
     return (
         <>
         <Header />
-        <div>
-            <h1>This is Login</h1>
-            <button onClick={handleGoogle}>Continue With Google</button>
+        <div className="container mt-5">
+            <h1>Login</h1>
+            <button style={buttonStyle} onClick={handleGoogle}>Continue With Google</button>
         </div>
         </>
     );
