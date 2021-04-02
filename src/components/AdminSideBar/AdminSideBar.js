@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const AdminSideBar = () => {
     return (
-        <div style={{backgroundColor: '#150761',height: '825px',fontSize: '20px'}} className="pl-0 text-white">
+        <div style={{backgroundColor: '#150761',height: '881px',fontSize: '20px'}} className="pl-0 text-white">
             <Link to="/" className="text-white">
                 <h2 className="p-3">Grocery Shops</h2>
             </Link>
