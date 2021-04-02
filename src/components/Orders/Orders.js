@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import OrderList from '../OrderList/OrderList';
 
 const Orders = () => {
     const [orderedProduct, setOrderedProduct] = useState([]);
+    const [userInfo,setUserInfo] = useContext(UserContext);
     useEffect(() => {
-        const url = 'http://localhost:5000/orderList';
+        const url = 'http://localhost:5000/orderList?email='+userInfo.email;
         fetch(url)
         .then(res => res.json())
         .then(data => setOrderedProduct(data))
